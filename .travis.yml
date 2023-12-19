@@ -31,7 +31,7 @@ deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # Travis 웹에서 설정한 환경 변수
     secret_access_key: $AWS_SECRET_KEY # Travis 웹에서 설정한 환경 변수
-    bucket: amad-project
+    bucket: amad-project-build
     region: ap-northeast-2
     skip_cleanup: true
     acl: private
