@@ -18,6 +18,28 @@ cache:
 # 지정된 브랜치에 푸시되었을 때 수행하는 명령어
 script: "./gradlew clean build"
 
+# deploy 명령어가 실행되기 전에 수행된다.
+# Travis CI에서 build한 jar파일을 S3에 업로드 하는 과정
+# Travis 는 디렉토리 단위로만 업로드 가능
+before_deploy:
+  - zip -r amad-project *
+  - mkdir -p deploy
+  - mv amad-project.zip deploy/amad-project.zip
+
+# S3로 파일 업로드 혹은 codedeploy로 배포 등 외부 서비스와 연동될 행위들을 선언
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # Travis 웹에서 설정한 환경 변수
+    secret_access_key: $AWS_SECRET_KEY # Travis 웹에서 설정한 환경 변수
+    bucket: amad-project
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private
+    local_dir: deploy # 해당 위치의 파일들만 S3로 전송
+    wait-until-deployed: true
+    on:
+      branch: main
+
 # CI 실행 완료 시 메일로 알람
 notifications:
   email:
