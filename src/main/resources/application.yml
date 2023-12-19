@@ -1,0 +1,14 @@
+server:
+  port: 1101
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3300/mydb
+    username: amad
+    password: amad
+
+mybatis:
+  type-aliases-package:
+  configuration.map-underscore-to-camel-case: true
+  mapper-locations: classpath*:mapper/**/*.xml

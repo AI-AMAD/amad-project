@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  mysql:
+    build:
+      context: ./mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    container_name: mysql-byAMAD
+    ports:
+      - 3300:3306
+    volumes:
+      - ./mysql/init/:/docker-entrypoint-initdb.d/
+      - MYSQL_DATA:/var/lib/mysql
+    restart: always
+  spring_jar:
+    build:
+      context: ./project
+    container_name: jar-byAMAD
+    depends_on:
+      - mysql
+    ports:
+      - 1101:1101
+    restart: always
+
+volumes:
+  MYSQL_DATA:
