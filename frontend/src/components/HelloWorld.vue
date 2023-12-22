@@ -4,7 +4,7 @@
       <v-card-item>
         <div>
           <div class="text-overline mb-1">Toy Project!!</div>
-          <div class="text-h6 mb-1">Spring + vue + mysql + docker + CI/CD !!!</div>
+          <div class="text-h6 mb-1">Spring + vue + mysql + docker 그리고 Travis를 이용한 CI/CD</div>
           <div class="text-caption">버튼을 클릭하면 db에서 가져온 값을 출력합니다.</div>
         </div>
       </v-card-item>
