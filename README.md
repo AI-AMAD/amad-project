@@ -1,2 +1,3 @@
-Spring boot + Vue + Mysql + Docker + AWS + CI/CD 구성으로 이루어진 프로젝트 입니다.
-저의 포트폴리오이며 프로젝트 수행 과정은 제 개인블로그 -> (링크) 에 자세히 기록해놓았습니다.
+- Spring boot + Vue + Mysql + Docker + AWS + CI/CD 구성으로 이루어진 프로젝트 입니다.
+- 멋진 UI와 복잡한 로직을 담은 프로젝트는 아니며, 개발자라면 반드시 알아야 할 work flow를 담았습니다.
+- 수행 과정은 개인 블로그에 상세히 기록 되어 있습니다. -> https://amad-note.tistory.com/entry/springgradle-vue3-mysql-docker-compose
